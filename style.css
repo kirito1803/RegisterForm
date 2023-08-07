@@ -1,0 +1,194 @@
+/* Reset properties */
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+/* Page */
+.page {
+    height: 100vh;
+    width: 100vw;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Form element */
+.form {
+    position: fixed;
+    height: 85vh;
+    width: 30vw;
+    background-color: hsla(192, 100%, 70%, 0.25);
+    top: 7.5vh;
+    left: 35vw;
+    border-radius: 15px;
+}
+
+/* Header */
+.form .header {
+    height: 25vh;
+    width: 100%;
+}
+
+.form .header .logo {
+    height: 100%;
+    width: 100%;
+    background-image: url('./source/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.form .separator {
+    height: 1vh;
+    width: 27vw;
+    background-color: hsla(167, 100%, 50%, 1);
+    margin-inline: 1.5vw;
+    border-radius: 0.5vh;
+}
+
+/* Body */
+.info {
+    margin: 2vh 2vw 0;
+}
+
+.info-attribute {
+    margin: 0.8vw 0;
+    color: white;
+}
+
+.info-attribute .tag-container {
+    display: flex;
+    margin: 0.8vw 0;
+}
+
+.info .icon {
+    width: 3vh;
+    height: 3vh;
+    margin-right: 2vh;
+}
+
+.info .info-tag {
+    height: 3vh;
+    width: 21vw;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 3vh;
+}
+
+input{
+    height: 5vh;
+    width: 26vw;
+    border-radius: 0.5vh;
+    cursor: auto;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 5vh;
+}
+
+/* Confirm button */
+.confirm {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+}
+
+.confirm-btn {
+    display: none;
+    position: absolute;
+    height: 6vh;
+    width: 20vw;
+    background-color: rgba(255, 41, 62, 1);
+    border-radius: 3vh;
+    text-align: center;
+    line-height: 6vh;
+    text-transform:uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    font-size: 16px;
+    top: 1vh;
+    border: 0;
+}
+
+.confirm-btn:hover {
+    height: 7vh;
+    width: 21vw;
+    line-height: 7vh;
+    border-radius: 3.5vh;
+    background-color: #2470ff;
+    top: 0.5vh;
+    font-size: 18px;
+    box-shadow: 0 0 10px 5px #C0EEF2;
+}
+
+@keyframes appear-animate {
+    from {
+        top: -3vh;
+        height: 0;
+        width: 0;
+        font-size: 0;
+    }
+    to {
+        top: 1vh;
+        height: 6vh;
+        width: 20vw;
+        font-size: 16px;
+    }
+}
+
+@keyframes disappear-animate {
+    from {
+        top: 1vh;
+        height: 6vh;
+        width: 20vw;
+        font-size: 16px;
+    }
+    to {
+        top: -3vh;
+        height: 0;
+        width: 0;
+        font-size: 0;
+    }
+}
+
+.confirm-btn.appeared {
+    animation-name: appear-animate;
+    animation-duration: 2s;
+}
+
+.confirm-btn.disappeared {
+    animation-name: disappear-animate;
+    animation-duration: 2s;
+}
+
+/* Invalid attribute appear */
+.info-attribute.invalid {
+    margin: 0.4vw 0 !important;
+}
+
+.info-attribute.invalid input{
+    border-color: red !important;
+    border-width: 0.5vh;
+}
+
+.info-attribute.invalid .warning {
+    font-size: 15px !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    line-height: 3vh !important; 
+    color: red !important;
+}
+
+.info-attribute.invalid .tag-container {
+    margin: 0.4vw 0 !important;
+}
